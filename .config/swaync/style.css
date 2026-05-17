@@ -1,0 +1,204 @@
+/* ── Catppuccin Mocha ──────────────────────────────────────── */
+@define-color base     #1e1e2e;
+@define-color mantle   #181825;
+@define-color crust    #11111b;
+@define-color surface0 #313244;
+@define-color surface1 #45475a;
+@define-color overlay1 #7f849c;
+@define-color text     #cdd6f4;
+@define-color subtext  #a6adc8;
+@define-color blue     #89b4fa;
+@define-color lavender #b4befe;
+@define-color mauve    #cba6f7;
+@define-color red      #f38ba8;
+@define-color peach    #fab387;
+@define-color yellow   #f9e2af;
+@define-color green    #a6e3a1;
+@define-color teal     #94e2d5;
+
+/* ── Reset ─────────────────────────────────────────────────── */
+* {
+  background: transparent;
+  color: @text;
+  border: none;
+  border-radius: 0;
+  min-height: 0;
+  font-family: 'JetBrainsMono Nerd Font';
+  font-size: 12px;
+}
+
+/* ── Bar ───────────────────────────────────────────────────── */
+window#waybar {
+  background: @base;
+  border-bottom: 1px solid @surface0;
+}
+
+.modules-left  { margin-left: 6px; }
+.modules-right { margin-right: 6px; }
+
+/* ── Shared pill wall technique ────────────────────────────── */
+.modules-left > widget,
+.modules-center > widget,
+.modules-right > widget {
+  background: @mantle;
+  border-top: 1px solid @surface0;
+  border-bottom: 1px solid @surface0;
+}
+
+.modules-left > widget:first-child,
+.modules-center > widget:first-child,
+.modules-right > widget:first-child {
+  border-left: 1px solid @surface0;
+  border-radius: 20px 0 0 20px;
+}
+
+.modules-left > widget:last-child,
+.modules-center > widget:last-child,
+.modules-right > widget:last-child {
+  border-right: 1px solid @surface0;
+  border-radius: 0 20px 20px 0;
+}
+
+/* ── Workspaces ────────────────────────────────────────────── */
+#workspaces {
+  margin: 3px 0;
+  padding: 0 4px;
+  background: @mantle;
+  border: 1px solid @surface0;
+  border-radius: 20px;
+}
+
+#workspaces button {
+  all: initial;
+  font-family: 'JetBrainsMono Nerd Font';
+  font-size: 11px;
+  color: @overlay1;
+  padding: 0 7px;
+  margin: 0 1px;
+  border-radius: 14px;
+  min-width: 20px;
+  transition: all 0.15s ease;
+}
+
+#workspaces button:hover {
+  color: @subtext;
+  background: alpha(@surface0, 0.6);
+}
+
+#workspaces button.active {
+  color: @blue;
+  background: alpha(@blue, 0.15);
+  border-bottom: 2px solid @blue;
+  font-weight: bold;
+}
+
+#workspaces button.visible {
+  color: @subtext;
+}
+
+#workspaces button.urgent {
+  color: @red;
+  background: alpha(@red, 0.15);
+}
+
+/* ── Tray ──────────────────────────────────────────────────── */
+#tray {
+  padding: 0 8px;
+  border-left: 1px solid @surface0;
+}
+
+#tray > * {
+  margin: 0 2px;
+}
+
+/* ── Indicators ────────────────────────────────────────────── */
+#custom-screenrecord,
+#custom-idle,
+#custom-dnd {
+  padding: 0 6px;
+  font-size: 11px;
+  color: @surface1;
+  border-left: 1px solid @surface0;
+}
+
+#custom-screenrecord.active { color: @red; }
+#custom-idle.active         { color: @peach; }
+#custom-dnd.active          { color: @peach; }
+
+/* ── Clock ─────────────────────────────────────────────────── */
+#clock {
+  color: @blue;
+  font-weight: bold;
+  padding: 0 12px;
+  letter-spacing: 0.5px;
+}
+
+/* ── Pomodoro ──────────────────────────────────────────────── */
+#custom-pomodoro {
+  padding: 0 10px;
+  color: @subtext;
+  border-left: 1px solid @surface0;
+}
+
+#custom-pomodoro.running-work        { color: @red; }
+#custom-pomodoro.running-break,
+#custom-pomodoro.running-long_break  { color: @green; }
+#custom-pomodoro.paused              { color: @yellow; }
+#custom-pomodoro.stopped             { color: @surface1; }
+
+/* ── Updates ───────────────────────────────────────────────── */
+#custom-updates {
+  padding: 0 8px;
+  font-size: 11px;
+  color: @subtext;
+  border-left: 1px solid @surface0;
+}
+
+#custom-updates.pending  { color: @yellow; }
+#custom-updates.outdated { color: @peach; }
+
+/* ── Right modules ─────────────────────────────────────────── */
+#bluetooth,
+#network,
+#backlight,
+#pulseaudio,
+#cpu,
+#memory,
+#battery {
+  padding: 0 10px;
+  color: @subtext;
+}
+
+#bluetooth  { color: @lavender; border-right: 1px solid @surface0; }
+#network    { color: @blue;     border-right: 1px solid @surface0; }
+#backlight  { color: @yellow;   border-right: 1px solid @surface0; }
+#pulseaudio { color: @teal;     border-right: 1px solid @surface0; }
+#cpu        { color: @peach;    border-right: 1px solid @surface0; }
+#memory     { color: @mauve;    border-right: 1px solid @surface0; }
+#battery    { color: @green; }
+
+#bluetooth.disabled,
+#network.disconnected { color: @surface1; }
+
+#pulseaudio.muted { color: @surface1; }
+
+/* ── Battery states ────────────────────────────────────────── */
+#battery.warning  { color: @yellow; }
+#battery.critical {
+  color: @red;
+  animation: blink 1s steps(1) infinite;
+}
+
+@keyframes blink { to { opacity: 0; } }
+
+/* ── Tooltip ───────────────────────────────────────────────── */
+tooltip {
+  background: @mantle;
+  border: 1px solid @surface0;
+  border-radius: 8px;
+  padding: 6px 10px;
+  color: @text;
+}
+
+/* ── Hidden ────────────────────────────────────────────────── */
+.hidden { opacity: 0; min-width: 0; margin: 0; padding: 0; }
