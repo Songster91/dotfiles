@@ -1,2 +1,3 @@
 auto-cpufreq
 brave-bin
+paru
