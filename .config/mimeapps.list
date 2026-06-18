@@ -1,0 +1,17 @@
+[Default Applications]
+application/pdf=okularApplication_pdf.desktop
+application/x-compress=Alacritty.desktop
+image/jpeg=imv-dir.desktop
+application/json=nvim.desktop
+x-scheme-handler/fdm=freedownloadmanager_fdm_up.desktop
+x-scheme-handler/magnet=freedownloadmanager_magnet_up.desktop
+application/x-bittorrent=freedownloadmanager_torrent.desktop
+
+[Added Associations]
+application/pdf=okularApplication_pdf.desktop;
+application/x-compress=Alacritty.desktop;
+application/vnd.microsoft.portable-executable=wine-extension-msp.desktop;
+application/zip=wine-extension-zipx.desktop;
+image/jpeg=swappy.desktop;imv-dir.desktop;
+application/json=nvim.desktop;
+application/x-msdownload=wine.desktop;
