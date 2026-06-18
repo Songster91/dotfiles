@@ -1,0 +1,20 @@
+# Static information about the filesystems.
+# See fstab(5) for details.
+
+# /dev/sdb2 LABEL=arch
+UUID=565caf17-c03e-4ba9-b9fd-89fdc241c8cb	/         	btrfs	rw,noatime,compress=zstd:1,ssd,discard=async,space_cache=v2,subvol=/@	0 0
+
+# /dev/sdb2 LABEL=arch
+UUID=565caf17-c03e-4ba9-b9fd-89fdc241c8cb	/home     	btrfs	rw,noatime,compress=zstd:1,ssd,discard=async,space_cache=v2,subvol=/@home	0 0
+
+# /dev/sdb2 LABEL=arch
+UUID=565caf17-c03e-4ba9-b9fd-89fdc241c8cb	/.snapshots	btrfs	rw,noatime,compress=zstd:1,ssd,discard=async,space_cache=v2,subvol=/@snapshots	0 0
+
+# /dev/sdb2 LABEL=arch
+UUID=565caf17-c03e-4ba9-b9fd-89fdc241c8cb	/var/log  	btrfs	rw,noatime,compress=zstd:1,ssd,discard=async,space_cache=v2,subvol=/@var_log	0 0
+
+# /dev/sdb1
+UUID=DC8E-F0B2	/boot	vfat	rw,relatime,fmask=0077,dmask=0077,codepage=437,iocharset=ascii,shortname=mixed,utf8,errors=remount-ro	0 2
+
+# /dev/sda1
+UUID=c108794b-8f31-431e-8370-493769d8c85e  /mnt/songster  ext4  rw,noatime,nofail,x-systemd.device-timeout=10  0 0

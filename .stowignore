@@ -1,0 +1,7 @@
+^\.git
+^\.stowignore
+^README\.md
+^install\.sh
+^packages\.txt
+^packages-aur\.txt
+^system-configs
