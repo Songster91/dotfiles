@@ -4,3 +4,8 @@ paru
 brave-bin
 auto-cpufreq
 btrfs-assistant
+colloid-nord-gtk-theme-git
+colloid-gruvbox-gtk-theme-git
+dracula-gtk-theme
+nordzy-cursors
+bibata-cursor-gruvbox-git
