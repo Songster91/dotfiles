@@ -3,3 +3,4 @@ catppuccin-gtk-theme-mocha
 paru
 brave-bin
 auto-cpufreq
+btrfs-assistant
